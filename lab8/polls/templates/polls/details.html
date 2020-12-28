@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lab8</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    {% load static %}
+
+</head>
+<body class="d-flex h-100 text-center text-white bg-dark">
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+        <div class="container" style="background-color: black; height: 60pt;">
+            <h3 style="text-align: center; margin: 0 auto;">Выбранная кухня</h3>
+            <nav class="nav nav-masthead justify-content-center float-md-end">
+                <a class="nav-link active" aria-current="page" href="/polls/">На главную</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container-fluid">
+        <h1 class="text-center text-light">{{ food.name }}</h1>
+        <table class="table table-dark table-borderless">
+            <tr>
+                <td class="text-light td-text-short" style="text-align: justify">{{ description.description }}</td>
+
+                    {% if food.id == 1 %}
+                    <img  style="max-width: 500px; height: auto" src="{% static "polls/img/1.jpg" %}" alt="russian" class="rounded img-fluid"/>
+
+                    {% endif %}
+
+                    {% if food.id == 2 %}
+                    <img style="max-width: 500px; height: auto" src="{% static "polls/img/2.jpg" %}" alt="ukranian" class="rounded img-fluid"/>
+
+                {% endif %}
+                    {% if food.id == 3 %}
+                    <img style="max-width: 500px; height: auto" src="{% static "polls/img/3.jpg" %}" alt="italian" class="rounded img-fluid"/>
+                    {% endif %}
+                    {% if food.id == 4 %}
+                    <img style="max-width: 500px; height: auto" src="{% static "polls/img/4.jpg" %}" alt="american" class="rounded img-fluid">
+                    {% endif %}
+                    {% if food.id == 5 %}
+                    <img style="max-height: 400px; width: auto" src="{% static "polls/img/5.jpg" %}" alt="spanish" class="rounded img-fluid">
+                    {% endif %}
+
+            </tr>
+        </table>
+    </main>
+</div>
+</body>
+</html>
